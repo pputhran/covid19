@@ -1,13 +1,13 @@
 import json
 
 NO_SYMPTOMS = "Thanks for the details. You have no symptoms of COVID 19."
-SYMPTOMS = "Thanks for the details. You have some symptons of COVID 19. I would suggest speaking to your doctor for next steps."
+SYMPTOMS = "Thanks for the details. You have some symptoms of COVID 19. I would suggest speaking to your doctor for next steps."
 
 def lambda_handler(event, context):
-    # TODO implement
+
     print(event['inputTranscript'])
 
-    if event['inputTranscript'] == 'None':
+    if event['inputTranscript'] == 'No Symptoms':
 
         result = {
                 "dialogAction": {
@@ -34,8 +34,3 @@ def lambda_handler(event, context):
         
     
     return result
-
-
-
-
-	
