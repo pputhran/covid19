@@ -1,7 +1,7 @@
 
-## Lex Fulfillment Lambda function
+## COVID-19 Lex bot
 
-You can click on this 
+Click on the `Launch Stack` button to deploy the COVID-19 sample Lex Bot application
 
 Region| Launch
 ------|-----
