@@ -1,0 +1,34 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+
+Resources:    
+  COVIDHelper:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+        FunctionName: 'covid_function'
+        Handler: covid_function.lambda_handler
+        Runtime: python3.8
+        CodeUri: ./functions/covid_function
+        Policies:
+            - Statement:
+              - Sid: LexFullAccess
+                Effect: Allow
+                Action:
+                - lex:*
+                Resource: '*'
+
+    COVIDHelper:
+        Type: 'AWS::Serverless::Function'
+        Properties:
+            FunctionName: 'sentiment_analysis'
+            Handler: sentiment_analysis.lambda_handler
+            Runtime: python3.8
+            CodeUri: ./functions/sentiment_analysis
+            Policies:
+                - Statement:
+                    - Sid: ComprehendFullAccess
+                    Effect: Allow
+                    Action:
+                    - comprehend:*
+                    - lex:*
+                    Resource: '*'
